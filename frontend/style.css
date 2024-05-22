@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Indie+Flower&family=Jersey+25&family=Jersey+25+Charted&family=Silkscreen:wght@400;700&family=Special+Elite&display=swap');
+
+*{
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    font-size: 16px;
+    font-family: "Dosis", sans-serif;
+    background-color: #F9F5EB;
+    color: #002B5B;
+}
+
+.container{
+    display: flex;
+    width: 95%;
+    margin: 0px auto;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+    gap: 20px;
+}
+
+li{
+    list-style: none;
+}
+
+.movies{
+    border-radius: 10px;
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-card{
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+}
+
+button{
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    margin: 0px 5px;
+    background-color: transparent;
+    width: 80px;
+    text-align: center;
+}
+
+button:active{
+    background-color: #002B5B;
+    color: white
+}
