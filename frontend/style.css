@@ -1,60 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Indie+Flower&family=Jersey+25&family=Jersey+25+Charted&family=Silkscreen:wght@400;700&family=Special+Elite&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 *{
     padding: 0;
+    color: white;
+    font-family: "Open Sans", sans-serif;
 }
 
 body{
     height: 100vh;
     font-size: 16px;
-    font-family: "Dosis", sans-serif;
-    background-color: #F9F5EB;
+    margin: 0;
+    background-color: #151515;
     color: #002B5B;
 }
+
+header{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 10px;
+    background-color: #000000;
+}
+
+header h1{
+    margin: 0;
+    font-size: 24px;
+    color: #A91D3A;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 10px 0px;
+    gap: 60px;
+}
+
+li a{
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
 
 .container{
     display: flex;
     width: 95%;
     margin: 0px auto;
+    margin-top: 10px;
     flex-direction: column;
     align-items: center;
-    margin: 0px auto;
     gap: 20px;
 }
 
 li{
     list-style: none;
+    color: #686D76;
 }
 
-.movies{
+strong {
+    color: #EEEEEE;
+}
+
+#contenedorMovies{
     border-radius: 10px;
     width: 80%;
     padding: 10px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .movie-card{
+    max-width: 180px;
+    min-width: 80px;
+    padding: 15px 10px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 150px;
-    height: 200px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+
+.input-movie{
+    display: none;
+}
+    
+input{
+    color: black;
+    border-radius: 5px;
+    height: 30px;
+    width: 180px;
+}
+
+.input-movie:checked + label{
+    border: 1px solid white;
+}
+
+h3{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    align-self: flex-start;
+    color:  #B33030;
+}
+
+#list-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons{
+    display: flex; 
+    gap: 10px;
 }
 
 button{
     padding: 10px;
-    color: black;
     border-radius: 5px;
     margin: 0px 5px;
-    background-color: transparent;
+    background-color: white;
+    color: #000;
     width: 80px;
+    height: 50px;
     text-align: center;
+    font-weight: 600;
 }
 
 button:active{
-    background-color: #002B5B;
+    background-color: #A91D3A;
     color: white
 }
+
+#form{
+    display: flex;
+    border-radius: 10px;
+    background-color: #000;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+#submitUpdate{
+    align-self: center;
+}
+
+

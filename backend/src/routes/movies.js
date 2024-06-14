@@ -1,16 +1,16 @@
 const { Router } = require('express')
 const router = Router()
 const _ = require('underscore');
-const movies = require('../sample.json')
+const movies = require('../../sample.json')
+const path = require('path');
 
-//Pedir algo
-router.get('/', (req,res) => {
+//Solicitar descripcion de la pelicula
+router.get('/', (req,res) => {    
     res.json(movies)
 })
 
 //Guardar algo
 router.post('/', (req,res) => {
-    
     const { title, director, year, rating } = req.body
     if(title && director && year && rating){
         const id = movies.length + 1
@@ -25,6 +25,7 @@ router.post('/', (req,res) => {
 //Actualizar
 router.put('/:id', (req,res) => {
     const { id } = req.params
+    console.log(id)
     const { title, director, year, rating } = req.body
     if(title && director && year && rating){
         _.each(movies, (movie, i) => {
@@ -45,9 +46,15 @@ router.put('/:id', (req,res) => {
 //Eliminar
 router.delete('/:id', (req,res) => {
     const { id } = req.params
-    console.log(id)
+    console.log('ID to delete:', id);
+    // Convertir id a número si es necesario
+    const idNum = parseInt(id, 10);
+    // Validar que el id es un número
+    if (isNaN(idNum)) {
+        return res.status(400).json({ error: "Invalid ID" });
+    }
     _.each(movies, (movie, i) => {
-        if(movie.id == id){
+        if(movie && movie.id === idNum){
             movies.splice(i,1)
         }
     });

@@ -7,36 +7,46 @@
     <title>Movie admin</title>
 </head>
 <body>
+    <header>
+        <h1>Cinemania</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Movies</a></li>
+                <li><a href="">TV shows </a></li>
+                <li><a href="">Popular</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h1>MovieAdmin</h1>
-        <div class="movies">
-            <div class="movie-card">
-                <div id="img">
-                    <img src="" alt="">
-                </div>
-                <div id="descripcion">
-                    <ul id="list-description">
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div id="img">
-                    <img src="" alt="">
-                </div>
-                <div id="descripcion">
-                    <ul id="list-description">
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+        <div id="contenedorMovies">
         </div>
         <div class="buttons">
-            <button id="updateButton" >Actualizar</button>
-            <button id="deleteButton">Eliminar</button>
-            <button id="uploadButton">Subir</button>
+            <button id="deleteButton">Delete</button>
+            <button id="updateButton">Update</button>
+            <form id="form">
+                <label>
+                    Title:
+                    <input id="inputTitle" name="title" type="text"/>
+                </label>
+                <label>
+                    Director:
+                    <input id="inputDirector" name="director" type="text"/>
+                </label>
+                <label>
+                    Year:
+                    <input id="inputYear" name="year" type="number"/>
+                </label>
+                <label>
+                    Rating:
+                    <input id="inputRating" name="rating" type="number"/>
+                </label>
+                <button id="submitUpdate">Update</button>
+            </form>
         </div>
     </div>
-    <script src="./src/index.js"></script>
+    <!-- <script src="./src/script-images.js"></script> -->
+    <script  src="./src/class.js"></script>
+    <script  src="./src/index.js"></script>
 </body>
 </html>

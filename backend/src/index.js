@@ -1,6 +1,7 @@
 const express = require('express')
 const { json } = require('express/lib/response')
 const morgan = require('morgan')
+const path = require('path');
 
 //Initilizations
 const app = express()
@@ -19,10 +20,18 @@ app.use(express.urlencoded({extended:false}))
 
 //Routes - para recibir y mostrar datos, cada solicitud sea procesado o llegue al router adecuado
 //Compara la ruta de la solicitud con las rutas definidas en los routers disponibles, una vez que lo encuentra, se lo pasa para que lo procese
+app.use((req,res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*'])
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    res.append('Access-Control-Allow-Headers', 'X-PINGOTHER, Content-Type')
+    next()
+})
 
-app.use(require('./routes/index')) 
-app.use('/api/movies',require('./routes/movies')) //app(ruta, middleware), estoy asociando la ruta con el middleware
+app.use('/admin/movies', require('./routes/movies')) //app(ruta, middleware), estoy asociando la ruta con el middleware
 
+//Formas de servir imagenes con sendFile y con static
+//app.use('/admin/img', require('./routes/serveImages')) 
+app.use('/static', express.static(path.join(__dirname, '..', 'static')));
 
 //Start the server
 app.listen(app.get('port'), () => {
